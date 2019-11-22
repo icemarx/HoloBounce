@@ -34,3 +34,7 @@ sysinfo.txt
 # Builds
 *.apk
 *.unitypackage
+Bounce/Assets/WSATestCertificate.pfx
+Bounce/Assets/WSATestCertificate.pfx.meta
+Bounce/UWP/project.json
+Bounce/UWP/project.lock.json
