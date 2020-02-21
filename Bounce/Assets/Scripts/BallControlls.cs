@@ -20,12 +20,14 @@ public class BallControlls : MonoBehaviour
         
     }
 
-    private void OnMouseDown()
+    public void OnSelect()
     {
         Vector3 vec = this.transform.position - Camera.main.transform.position;
         vec = vec.normalized * forceAmount;
         rb.AddForce(vec, ForceMode.Impulse);
         rb.useGravity = true;
     }
+
+    
 
 }
