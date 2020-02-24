@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public bool isHolding;
     public float maxDistance = 20;
 
     public Transform holdTransform;
     public GameObject ball;
+    private GameObject held;
     
     void Start() {
         
@@ -40,6 +40,16 @@ public class Player : MonoBehaviour
         // place in "hands"
         t.SetParent(transform);
         t.SetPositionAndRotation(holdTransform.position, holdTransform.localRotation);
-        isHolding = true;
+        held = t.gameObject;
+    }
+
+    public void Place() {
+        if(held != null) {
+            // detach and change position
+            held.transform.parent = null;
+            held.transform.position = transform.position + transform.forward;
+            
+            held = null;
+        }
     }
 }

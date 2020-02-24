@@ -382,7 +382,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70a6323e36e9df94f864ba7169706849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isHolding: 0
   maxDistance: 20
   holdTransform: {fileID: 1903425739}
   ball: {fileID: 992838628}
@@ -449,24 +448,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f494cec9395b12849ae9863f6a3c256e, type: 3}
---- !u!1 &1461948152 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 154114, guid: f494cec9395b12849ae9863f6a3c256e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1461948151}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1461948153
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1461948152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04868b0de99be874284c766a2c439e43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1611705615
 GameObject:
   m_ObjectHideFlags: 0
@@ -523,6 +504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04868b0de99be874284c766a2c439e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 534669902}
 --- !u!1 &1839385546
 GameObject:
   m_ObjectHideFlags: 0

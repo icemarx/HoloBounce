@@ -5,6 +5,8 @@ public class GazeGestureManager : MonoBehaviour
 {
     public static GazeGestureManager Instance { get; private set; }
 
+    public GameObject player;
+
     // Represents the hologram that is currently being gazed at.
     public GameObject FocusedObject { get; private set; }
 
@@ -25,6 +27,8 @@ public class GazeGestureManager : MonoBehaviour
                 Debug.Log("hit!");
                 FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
             }
+
+            player.GetComponent<Player>().Place();
         };
         recognizer.StartCapturingGestures();
     }
