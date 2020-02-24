@@ -31,6 +31,13 @@ public class Player : MonoBehaviour
     }
 
     public void PickUp(Transform t) {
+        // stop ball from moving
+        Rigidbody trgbd = t.GetComponent<Rigidbody>();
+        trgbd.useGravity = false;
+        trgbd.velocity = Vector3.zero;
+        trgbd.angularVelocity = Vector3.zero;
+
+        // place in "hands"
         t.SetParent(transform);
         t.SetPositionAndRotation(holdTransform.position, holdTransform.localRotation);
         isHolding = true;

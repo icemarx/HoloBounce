@@ -383,7 +383,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHolding: 0
+  maxDistance: 20
   holdTransform: {fileID: 1903425739}
+  ball: {fileID: 992838628}
+--- !u!1 &992838628 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
+    type: 3}
+  m_PrefabInstance: {fileID: 2014288822}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1461948151
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -630,16 +638,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 114967454624763986, guid: fc869f7baf666f34d925f94e501bbf16,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 2014288823}
     - target: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
         type: 3}
       propertyPath: m_Name
       value: BouncyBall
       objectReference: {fileID: 0}
+    - target: {fileID: 114967454624763986, guid: fc869f7baf666f34d925f94e501bbf16,
+        type: 3}
+      propertyPath: rb
+      value: 
+      objectReference: {fileID: 2014288823}
     - target: {fileID: 4228116087509514036, guid: fc869f7baf666f34d925f94e501bbf16,
         type: 3}
       propertyPath: m_LocalPosition.x
