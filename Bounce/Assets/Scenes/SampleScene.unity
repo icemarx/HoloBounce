@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isHolding: 0
-  holdTransform: {fileID: 0}
+  holdTransform: {fileID: 1903425739}
 --- !u!1001 &1461948151
 PrefabInstance:
   m_ObjectHideFlags: 0
