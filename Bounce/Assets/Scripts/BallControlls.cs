@@ -6,12 +6,11 @@ public class BallControlls : MonoBehaviour
 {
 
     public float forceAmount = 1f;
-    public Rigidbody rb;
+    private Rigidbody rb;
 
     // Start is called before the first frame update
-    void Start()
-    {
-
+    void Start() {
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

@@ -625,11 +625,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BouncyBall
       objectReference: {fileID: 0}
-    - target: {fileID: 114967454624763986, guid: fc869f7baf666f34d925f94e501bbf16,
-        type: 3}
-      propertyPath: rb
-      value: 
-      objectReference: {fileID: 2014288823}
     - target: {fileID: 4228116087509514036, guid: fc869f7baf666f34d925f94e501bbf16,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -687,9 +682,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc869f7baf666f34d925f94e501bbf16, type: 3}
---- !u!54 &2014288823 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 4228116087509514037, guid: fc869f7baf666f34d925f94e501bbf16,
-    type: 3}
-  m_PrefabInstance: {fileID: 2014288822}
-  m_PrefabAsset: {fileID: 0}
