@@ -8,10 +8,12 @@ public class Player : MonoBehaviour
 
     public Transform holdTransform;
     public GameObject ball;
+    public GameObject UI;
+    private bool UISpawned;
     private GameObject held;
     
     void Start() {
-        
+        UISpawned = false;
     }
 
     void Update() {
@@ -51,5 +53,20 @@ public class Player : MonoBehaviour
             
             held = null;
         }
+    }
+
+    public void OnSelect()
+    {
+        if (!UISpawned)
+        {
+            UISpawned = true;
+            SpawnUI();
+        }
+    }
+
+    public void SpawnUI()
+    {
+        
+        
     }
 }

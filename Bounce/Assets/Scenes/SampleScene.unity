@@ -287,7 +287,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.4936085
+      value: 29.259678
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -297,7 +297,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4578724
+      value: 26.68
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -354,7 +354,7 @@ PrefabInstance:
     - target: {fileID: 1111074065743030000, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_Color.rgba
-      value: 4288895564
+      value: 4291904293
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba6762e360d95240ba317909e09b0ba, type: 3}
@@ -432,7 +432,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.49360847
+      value: 27.259678
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -442,7 +442,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4578724
+      value: 26.68
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -499,7 +499,7 @@ PrefabInstance:
     - target: {fileID: 1111074065743030000, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_Color.rgba
-      value: 4289941564
+      value: 4291904293
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba6762e360d95240ba317909e09b0ba, type: 3}
@@ -641,6 +641,7 @@ MonoBehaviour:
   maxDistance: 20
   holdTransform: {fileID: 1903425739}
   ball: {fileID: 992838628}
+  UI: {fileID: 0}
 --- !u!1 &992838628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
@@ -662,7 +663,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.4916086
+      value: 31.257677
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -672,7 +673,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4578724
+      value: 26.68
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -729,7 +730,7 @@ PrefabInstance:
     - target: {fileID: 1111074065743030000, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_Color.rgba
-      value: 4289027407
+      value: 4291904293
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba6762e360d95240ba317909e09b0ba, type: 3}
@@ -1064,7 +1065,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.5060663
+      value: 25.26
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
@@ -1074,7 +1075,7 @@ PrefabInstance:
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.4578724
+      value: 26.68
       objectReference: {fileID: 0}
     - target: {fileID: 8537850030449766976, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
