@@ -8,8 +8,7 @@ public class BallControlls : MonoBehaviour
     public float forceAmount = 1f;
     private Rigidbody rb;
 
-    // Start is called before the first frame update
-    void Start() {
+    private void Awake() {
         rb = GetComponent<Rigidbody>();
     }
 

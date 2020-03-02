@@ -40,7 +40,7 @@ public class Player : MonoBehaviour
         trgbd.angularVelocity = Vector3.zero;
 
         // place in "hands"
-        t.SetParent(transform);
+        t.SetParent(transform, false);
         t.SetPositionAndRotation(holdTransform.position, holdTransform.localRotation);
         held = t.gameObject;
     }

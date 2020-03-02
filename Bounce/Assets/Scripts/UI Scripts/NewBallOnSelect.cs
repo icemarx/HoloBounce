@@ -10,7 +10,9 @@ public class NewBallOnSelect : MonoBehaviour
     public void OnSelect() {
         Player p = player.GetComponent<Player>();
         GameObject.Destroy(p.ball);
-        p.ball = Instantiate(ball);
+        p.ball = Instantiate(this.ball);
+        p.ball.SetActive(true);
+        //p.ball.transform.SetParent(p.transform);
         p.PickUp(p.ball.transform);
     }
 }

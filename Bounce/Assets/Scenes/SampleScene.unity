@@ -509,7 +509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 534669902}
-  ball: {fileID: 992838628}
+  ball: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16, type: 3}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -836,7 +836,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 534669902}
-  FocusedObject: {fileID: 0}
 --- !u!1 &1839385546
 GameObject:
   m_ObjectHideFlags: 0
