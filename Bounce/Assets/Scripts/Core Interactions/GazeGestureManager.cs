@@ -5,7 +5,7 @@ public class GazeGestureManager : MonoBehaviour
 {
     public static GazeGestureManager Instance { get; private set; }
 
-    public GameObject player;
+    public GameObject player;       // TODO: change to reference in Game Manager
 
     // Represents the hologram that is currently being gazed at.
     public GameObject FocusedObject { get; private set; }
