@@ -6,11 +6,11 @@ public class Player : MonoBehaviour
 {
     public float maxDistance = 20;
 
-    public Transform holdTransform;
+    public Transform holdTransform;     // Transform that designates where the items held in hands should be placed to
     public GameObject ball;
     public GameObject UI;
     private bool UISpawned;
-    private GameObject held;
+    private GameObject heldItem;
     
     void Start() {
         UISpawned = false;
@@ -32,26 +32,30 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void PickUp(Transform t) {
-        // stop ball from moving
-        Rigidbody trgbd = t.GetComponent<Rigidbody>();
-        trgbd.useGravity = false;
-        trgbd.velocity = Vector3.zero;
-        trgbd.angularVelocity = Vector3.zero;
+    /// <summary>
+    /// Picks up the item, placing it in player's possession and moves it to holdTransform position, aka. hands
+    /// </summary>
+    /// <param name="item">Transform of the picked up item. NOTE: Item is ball, but may be changed to any item in the future </param>
+    public void PickUp(Transform item) {
+        // stop item from moving and rotating
+        Rigidbody item_rb = item.GetComponent<Rigidbody>();
+        item_rb.useGravity = false;
+        item_rb.velocity = Vector3.zero;
+        item_rb.angularVelocity = Vector3.zero;
 
         // place in "hands"
-        t.SetParent(transform, false);
-        t.SetPositionAndRotation(holdTransform.position, holdTransform.localRotation);
-        held = t.gameObject;
+        item.SetParent(transform, false);
+        item.SetPositionAndRotation(holdTransform.position, holdTransform.localRotation);
+        heldItem = item.gameObject;
     }
 
     public void Place() {
-        if(held != null) {
+        if(heldItem != null) {
             // detach and change position
-            held.transform.parent = null;
-            held.transform.position = transform.position + transform.forward;
+            heldItem.transform.parent = null;
+            heldItem.transform.position = transform.position + transform.forward;
             
-            held = null;
+            heldItem = null;
         }
     }
 
