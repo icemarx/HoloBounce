@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BallControlls : MonoBehaviour
+public class BallController : MonoBehaviour
 {
 
     public float forceAmount = 1f;
