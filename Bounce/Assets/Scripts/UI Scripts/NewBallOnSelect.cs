@@ -8,7 +8,7 @@ public class NewBallOnSelect : MonoBehaviour
     public GameObject ball;         // TODO: change to reference in Game Manager
     
     public void OnSelect() {
-        Player p = player.GetComponent<Player>();
+        PlayerController p = player.GetComponent<PlayerController>();
         GameObject.Destroy(p.ball);
         p.ball = Instantiate(this.ball);
         p.ball.SetActive(true);
