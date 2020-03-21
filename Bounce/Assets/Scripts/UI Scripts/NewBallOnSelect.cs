@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBallOnSelect : MonoBehaviour
-{
-    public GameObject player;       // TODO: change to reference in Game Manager
-    public GameObject ball;         // TODO: change to reference in Game Manager
-    
+public class NewBallOnSelect : MonoBehaviour {
     public void OnSelect() {
-        PlayerController p = player.GetComponent<PlayerController>();
-        GameObject.Destroy(p.ball);
-        p.ball = Instantiate(this.ball);
-        p.ball.SetActive(true);
+        // Destroy old ball
+        GameObject ball = GameManager.GetFirstBall();
+        GameManager.RemoveBall(ball);
+        Destroy(ball);
+
+        ball = GameManager.CreateBall();
+        ball.SetActive(true);
+        
         //p.ball.transform.SetParent(p.transform);
-        p.PickUp(p.ball.transform);
+        GameManager.Player.GetComponent<PlayerController>().PickUp(ball.transform);
     }
 }
