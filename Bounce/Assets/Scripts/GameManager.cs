@@ -4,15 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /// <value>
+    /// Property <c>player</c> represents the active player in the game.
+    /// it is set at the start of the game and should not be changed.
+    /// </value>
+    public GameObject Player { get; private set; }
 
-    // Update is called once per frame
-    void Update()
-    {
-        Debug.Log("TEST");
+    private void Awake() {
+        Player = GameObject.Find("Player");
     }
 }
