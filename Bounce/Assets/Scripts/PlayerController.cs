@@ -7,7 +7,6 @@ public class PlayerController : MonoBehaviour
     public float maxDistance = 20;
 
     public Transform holdTransform;     // Transform that designates where the items held in hands should be placed to
-    public GameObject ball;
     public GameObject UI;
     private bool UISpawned;
     private GameObject heldItem;
@@ -17,10 +16,14 @@ public class PlayerController : MonoBehaviour
     }
 
     void Update() {
-        // check distance from ball
-        float distance = (transform.position - ball.transform.position).magnitude;
-        if (distance >= maxDistance) {
-            PickUp(ball.transform);
+        foreach(GameObject ball in GameManager.Balls) {
+            // check distance from ball
+            float distance = (transform.position - ball.transform.position).magnitude;
+            if (distance >= maxDistance) {
+                // handle balls out of range
+
+                PickUp(ball.transform);
+            }
         }
     }
 
