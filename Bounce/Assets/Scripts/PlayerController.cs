@@ -33,7 +33,7 @@ public class PlayerController : MonoBehaviour
     }
 
     /// <summary>
-    /// Picks up the item, placing it in player's possession and moves it to holdTransform position, aka. hands
+    /// Picks up the <c>item</c>, placing it in player's possession and moves it to <c>holdTransform</c> position, aka. hands
     /// </summary>
     /// <param name="item">Transform of the picked up item. NOTE: Item is ball, but may be changed to any item in the future </param>
     public void PickUp(Transform item) {
