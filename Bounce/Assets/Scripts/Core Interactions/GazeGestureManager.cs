@@ -5,8 +5,6 @@ public class GazeGestureManager : MonoBehaviour
 {
     public static GazeGestureManager Instance { get; private set; }
 
-    public GameObject player;       // TODO: change to reference in Game Manager
-
     // Represents the hologram that is currently being gazed at.
     public GameObject FocusedObject { get; private set; }
 
@@ -21,7 +19,8 @@ public class GazeGestureManager : MonoBehaviour
         recognizer = new GestureRecognizer();
         recognizer.Tapped += (args) =>
         {
-            player.GetComponent<PlayerController>().Place();
+            GameManager.Player.GetComponent<PlayerController>().Place();
+
             // Send an OnSelect message to the focused object and its ancestors.
             if (FocusedObject != null)
             {
