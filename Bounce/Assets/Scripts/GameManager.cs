@@ -50,6 +50,18 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Method <c>CreateBall()</c> creates a new ball based on <c>CurrentBallType</c> and
+    /// adds it into the <c>Balls</c> list.
+    /// <see cref="CurrentBallType"/>
+    /// </summary>
+    /// <returns>GameObject, representing the newly created ball.</returns>
+    public static GameObject CreateBall() {
+        GameObject ball = Instantiate(CurrentBallType);
+        AddBall(ball);
+        return ball;
+    }
+
+    /// <summary>
     /// Method <c>RemoveBall(GameObject ball)</c> removes the <c>ball</c> from the <c>Balls</c> list,
     /// but does not destroy it.
     /// </summary>
