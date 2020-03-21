@@ -141,6 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a778ef8d054e68b488c2706019c82849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DEFAULT_BALL_TYPE: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
+    type: 3}
 --- !u!4 &120936635
 Transform:
   m_ObjectHideFlags: 0
@@ -665,14 +667,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 20
   holdTransform: {fileID: 1903425739}
-  ball: {fileID: 992838628}
   UI: {fileID: 473828476}
---- !u!1 &992838628 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
-    type: 3}
-  m_PrefabInstance: {fileID: 2014288822}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1050249386
 PrefabInstance:
   m_ObjectHideFlags: 0

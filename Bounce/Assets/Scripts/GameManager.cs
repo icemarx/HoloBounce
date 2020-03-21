@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    /// <summary>
+    /// Default ball used when no other options for CurrentBallType, such as at the start
+    /// of the game or when there is an error changing it.
+    /// </summary>
+    [SerializeField]
+    private GameObject DEFAULT_BALL_TYPE;
+
     /// <value>
     /// Property <c>player</c> represents the active player in the game.
     /// It is set at the start of the game and should not be changed.
@@ -15,6 +22,12 @@ public class GameManager : MonoBehaviour
     /// that add or remove balls from list.
     /// </summary>
     public static List<GameObject> Balls { get; private set; }
+    /// <summary>
+    /// The currently chosen type of ball. Should always be non-null. Mainly used for creating
+    /// new balls. Should alway be selected from <c>BALL_TYPES</c>.
+    /// <see cref="BALL_TYPES"/>
+    /// </summary>
+    public static GameObject CurrentBallType { get; private set; }
 
     /// <summary>
     /// Finds the <c>Player</c> and all the balls with the Ball tag before the start of the game
@@ -23,6 +36,7 @@ public class GameManager : MonoBehaviour
     private void Awake() {
         Player = GameObject.Find("Player");
         Balls = new List<GameObject>(GameObject.FindGameObjectsWithTag("Ball"));
+        CurrentBallType = DEFAULT_BALL_TYPE;
     }
 
     /// <summary>
