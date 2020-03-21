@@ -8,13 +8,13 @@ public class GameManager : MonoBehaviour
     /// Property <c>player</c> represents the active player in the game.
     /// It is set at the start of the game and should not be changed.
     /// </value>
-    public GameObject Player { get; private set; }
+    public static GameObject Player { get; private set; }
     /// <summary>
     /// Property <c>balls</c> represents the List of all balls currently in game.
     /// It can only be written in within the GameManager with methods
     /// that add or remove balls from list.
     /// </summary>
-    public List<GameObject> Balls { get; private set; }
+    public static List<GameObject> Balls { get; private set; }
 
     /// <summary>
     /// Finds the <c>Player</c> and all the balls with the Ball tag before the start of the game
@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
     /// if the <c>ball</c> has a Ball tag.
     /// </summary>
     /// <param name="ball">GameObject, representing a Ball</param>
-    public void AddBall(GameObject ball) {
+    public static void AddBall(GameObject ball) {
         if (ball != null && ball.CompareTag("Ball"))
             Balls.Add(ball);
     }
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour
     /// but does not destroy it.
     /// </summary>
     /// <param name="ball">GameObject that should be a ball from the <c>Balls</c> list</param>
-    public void RemoveBall(GameObject ball) {
+    public static void RemoveBall(GameObject ball) {
         if (ball != null) {
             Balls.Remove(ball);
         }
@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour
     /// Returns the first ball in the <c>Balls</c> list, if the list is not empty.
     /// </summary>
     /// <returns>Element at index 0 in the <c>Balls</c> list or null if list is empty</returns>
-    public GameObject GetFirstBall() {
+    public static GameObject GetFirstBall() {
         if (Balls.Count >= 0)
             return Balls[0];
 
