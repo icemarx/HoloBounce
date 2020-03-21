@@ -9,10 +9,11 @@ public class NewBallOnSelect : MonoBehaviour {
         GameManager.RemoveBall(ball);
         Destroy(ball);
 
+        // create new ball
         ball = GameManager.CreateBall();
         ball.SetActive(true);
         
-        //p.ball.transform.SetParent(p.transform);
+        // pass it to player
         GameManager.Player.GetComponent<PlayerController>().PickUp(ball.transform);
     }
 }
