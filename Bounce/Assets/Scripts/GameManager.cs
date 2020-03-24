@@ -42,6 +42,23 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
+    /// Check for and handle balls that are too far away from Player.
+    /// If a ball is too far from the player, it is picked up.
+    /// <see cref="PlayerController.PickUp(Transform)"/>
+    /// </summary>
+    private void Update() {
+        foreach (GameObject ball in GameManager.Balls) {
+            // check distance from ball
+            float distance = (PC.transform.position - ball.transform.position).magnitude;
+            if (distance >= PC.maxDistance) {
+                // handle balls out of range
+
+                PC.PickUp(ball.transform);
+            }
+        }
+    }
+
+    /// <summary>
     /// Method <c>AddBall(GameObject ball)</c> adds the <c>ball</c> to the list <c>Balls</c>,
     /// if the <c>ball</c> has a Ball tag.
     /// </summary>
