@@ -10,10 +10,10 @@ public class NewBallOnSelect : MonoBehaviour {
         Destroy(ball);
 
         // create new ball
-        ball = GameManager.CreateBall();
-        ball.SetActive(true);
+        GameObject newball = GameManager.CreateBall();
+        newball.SetActive(true);
         
         // pass it to player
-        GameManager.Player.GetComponent<PlayerController>().PickUp(ball.transform);
+        GameManager.Player.GetComponent<PlayerController>().PickUp(newball.transform);
     }
 }
