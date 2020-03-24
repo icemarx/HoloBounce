@@ -14,6 +14,6 @@ public class NewBallOnSelect : MonoBehaviour {
         newball.SetActive(true);
         
         // pass it to player
-        GameManager.Player.GetComponent<PlayerController>().PickUp(newball.transform);
+        GameManager.PC.PickUp(newball.transform);
     }
 }

@@ -11,11 +11,13 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private GameObject DEFAULT_BALL_TYPE;
 
-    /// <value>
-    /// Property <c>player</c> represents the active player in the game.
-    /// It is set at the start of the game and should not be changed.
-    /// </value>
-    public static GameObject Player { get; private set; }
+    /// <summary>
+    /// Property <c>PC</c> represents the <c>PlayerController</c> script component of the
+    /// active <c>(GameObject) Player</c> in the game. It is set at the start of the game
+    /// and should not be changed. References to the <c>(GameObject) Player</c> should be
+    /// made through this component.
+    /// </summary>
+    public static PlayerController PC { get; private set; }
     /// <summary>
     /// Property <c>balls</c> represents the List of all balls currently in game.
     /// It can only be written in within the GameManager with methods
@@ -34,7 +36,7 @@ public class GameManager : MonoBehaviour
     /// and inicialises <c>Player</c> and <c>Balls</c> properties.
     /// </summary>
     private void Awake() {
-        Player = GameObject.Find("Player");
+        PC = GameObject.Find("Player").GetComponent<PlayerController>();
         Balls = new List<GameObject>(GameObject.FindGameObjectsWithTag("Ball"));
         CurrentBallType = DEFAULT_BALL_TYPE;
     }

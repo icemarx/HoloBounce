@@ -19,7 +19,7 @@ public class GazeGestureManager : MonoBehaviour
         recognizer = new GestureRecognizer();
         recognizer.Tapped += (args) =>
         {
-            GameManager.Player.GetComponent<PlayerController>().Place();
+            GameManager.PC.Place();
 
             // Send an OnSelect message to the focused object and its ancestors.
             if (FocusedObject != null)
