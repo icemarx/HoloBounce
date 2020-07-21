@@ -553,8 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fde0aaddd3483484689659c8402b61f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 534669902}
-  ball: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16, type: 3}
 --- !u!1 &534669902
 GameObject:
   m_ObjectHideFlags: 0
@@ -873,7 +871,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04868b0de99be874284c766a2c439e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 534669902}
 --- !u!1 &1839385546
 GameObject:
   m_ObjectHideFlags: 0
@@ -1049,6 +1046,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4228116087509514042, guid: fc869f7baf666f34d925f94e501bbf16,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: eda08264f043a8540a34859bdc8d5caa, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fc869f7baf666f34d925f94e501bbf16, type: 3}
 --- !u!1001 &5088274017042083132
