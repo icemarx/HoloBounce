@@ -2,14 +2,35 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
-{
+public class GameManager : MonoBehaviour {
     /// <summary>
     /// Default ball used when no other options for CurrentBallType, such as at the start
     /// of the game or when there is an error changing it.
     /// </summary>
     [SerializeField]
     private GameObject DEFAULT_BALL_TYPE;
+
+    /// <summary>
+    /// Holds the array of all Materials that will be used by the bouncy ball.
+    /// It should be refferenced by the variable <code>mat_index</code>.
+    /// Default material should always be set to the zeroth (0th) index.
+    /// </summary>
+    [SerializeField]
+    private Material[] BALL_MATERIAL;
+    /// <summary>
+    /// Holds the value of the currently chosen material. Set to 0 by default, in order to start
+    /// with the default material. Private <c>m_mat_index</c> serves as the actual storage,
+    /// and <c>mat_index</c> serves as as the retrievable value with automatic adjustments.
+    /// </summary>
+    [SerializeField]
+    private int MatIndex {
+        get { return m_MatIndex; }
+        set {
+            if (value < 0 || value >= BALL_MATERIAL.Length) m_MatIndex = 0;
+            else m_MatIndex = value;
+        }
+    }
+    public int m_MatIndex = 0;
 
     /// <summary>
     /// Property <c>PC</c> represents the <c>PlayerController</c> script component of the
@@ -69,13 +90,17 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Method <c>CreateBall()</c> creates a new ball based on <c>CurrentBallType</c> and
+    /// Method <c>CreateBall()</c> creates a new ball based on <c>CurrentBallType</c>, applies the current <c>Material</c> and
     /// adds it into the <c>Balls</c> list.
     /// <see cref="CurrentBallType"/>
     /// </summary>
     /// <returns>GameObject, representing the newly created ball.</returns>
-    public static GameObject CreateBall() {
+    public GameObject CreateBall() {
         GameObject ball = Instantiate(CurrentBallType);
+
+        // apply current Material
+        ball.GetComponent<Renderer>().material = BALL_MATERIAL[MatIndex];
+
         AddBall(ball);
         return ball;
     }
@@ -100,5 +125,14 @@ public class GameManager : MonoBehaviour
             return Balls[0];
 
         else return null;
+    }
+
+    /// <summary>
+    /// Temporary method for incrementing materials used for the balls. It cycles
+    /// through the list in one direction.
+    /// <note>Should be rewritten in the future</note>
+    /// </summary>
+    public void IncrementBallColor() {
+        MatIndex = (MatIndex + 1) % BALL_MATERIAL.Length;
     }
 }

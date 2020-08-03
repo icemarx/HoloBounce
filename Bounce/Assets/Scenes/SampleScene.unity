@@ -143,6 +143,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DEFAULT_BALL_TYPE: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
     type: 3}
+  BALL_MATERIAL:
+  - {fileID: 2100000, guid: eda08264f043a8540a34859bdc8d5caa, type: 2}
+  - {fileID: 2100000, guid: bc31e9166ae1d1f4fa27de61f1215d00, type: 2}
+  - {fileID: 2100000, guid: 74942be657c20aa449604285e8598695, type: 2}
+  m_MatIndex: 0
 --- !u!4 &120936635
 Transform:
   m_ObjectHideFlags: 0
