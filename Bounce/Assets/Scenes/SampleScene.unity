@@ -394,7 +394,7 @@ PrefabInstance:
       propertyPath: m_Text
       value: 'CHANGE
 
-        BALL'
+        COLOR'
       objectReference: {fileID: 0}
     - target: {fileID: 1111074065743030000, guid: dba6762e360d95240ba317909e09b0ba,
         type: 3}
