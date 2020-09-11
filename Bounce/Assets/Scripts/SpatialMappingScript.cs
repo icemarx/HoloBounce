@@ -21,16 +21,16 @@ public class SpatialMappingScript : MonoBehaviour
 
     IEnumerator ScannEnvironment() {
         // start scanning environment
-        smCollider.freezeUpdates = true;
-        smRenderer.freezeUpdates = true;
+        smCollider.freezeUpdates = false;
+        smRenderer.freezeUpdates = false;
         // Debug.Log("Started Scanning");
 
         // wait
         yield return new WaitForSeconds(SCANNING_TIME);
 
         // end scanning
-        smCollider.freezeUpdates = false;
-        smRenderer.freezeUpdates = false;
+        smCollider.freezeUpdates = true;
+        smRenderer.freezeUpdates = true;
         // Debug.Log("Stopped Scanning");
     }
 }
