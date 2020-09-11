@@ -932,9 +932,9 @@ MonoBehaviour:
   m_VolumeType: 1
   m_SphereRadius: 2
   m_HalfBoxExtents: {x: 4, y: 4, z: 4}
-  m_LodType: 2
+  m_LodType: 0
   m_NumUpdatesBeforeRemoval: 10
-  m_SecondsBetweenUpdates: 1
+  m_SecondsBetweenUpdates: 0.5
   m_CurrentRenderState: 2
   m_VisualMaterial: {fileID: 15303, guid: 0000000000000000f000000000000000, type: 0}
   m_OcclusionMaterial: {fileID: 15302, guid: 0000000000000000f000000000000000, type: 0}
@@ -955,9 +955,9 @@ MonoBehaviour:
   m_VolumeType: 1
   m_SphereRadius: 2
   m_HalfBoxExtents: {x: 4, y: 4, z: 4}
-  m_LodType: 2
+  m_LodType: 0
   m_NumUpdatesBeforeRemoval: 10
-  m_SecondsBetweenUpdates: 1
+  m_SecondsBetweenUpdates: 0.5
   m_Layer: 0
   m_Material: {fileID: 0}
   m_EnableCollisions: 1
@@ -987,7 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e52c3fd5f5352f4dad9839010094150, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SCANNING_TIME: 10
+  SCANNING_TIME: 20
 --- !u!1 &1903425738
 GameObject:
   m_ObjectHideFlags: 0
