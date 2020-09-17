@@ -11,7 +11,7 @@ public class SpatialMappingScript : MonoBehaviour
     private SpatialMappingRenderer smRenderer;
 
     // Start is called before the first frame update
-    void Start() {
+    void Awake() {
         smCollider = gameObject.GetComponentInParent<SpatialMappingCollider>();
         smRenderer = gameObject.GetComponentInParent<SpatialMappingRenderer>();
 
@@ -19,18 +19,34 @@ public class SpatialMappingScript : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// Starts scanning the environment for real world objects and generates colliders for them.
+    /// While scanning, the detected colliders are visualised by the renderer as well.
+    /// Scanning is active for a number of seconds, designated by the value of <c>SCANNING_TIME</c>.
+    /// After <c>SCANNING_TIME</c>, the <c>SpatialMappingCollider</c> and <c>SpatialMappingRender</c>
+    /// freezes updates and stops visualisation to conserve processing power.
+    /// </summary>
+    /// <returns>Time needed to stop scanning in seconds</returns>
     IEnumerator ScannEnvironment() {
         // start scanning environment
         smCollider.freezeUpdates = false;
         smRenderer.freezeUpdates = false;
-        // Debug.Log("Started Scanning");
+        // Apply visualisation
+        smRenderer.renderState = SpatialMappingRenderer.RenderState.Visualization;
+
+        Debug.Log("Started Scanning");
+
 
         // wait
         yield return new WaitForSeconds(SCANNING_TIME);
 
+
         // end scanning
         smCollider.freezeUpdates = true;
         smRenderer.freezeUpdates = true;
-        // Debug.Log("Stopped Scanning");
+        // Remove Visualisation
+        smRenderer.renderState = SpatialMappingRenderer.RenderState.Occlusion;
+
+        Debug.Log("Stopped Scanning");
     }
 }
