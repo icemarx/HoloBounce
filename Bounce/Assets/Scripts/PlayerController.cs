@@ -7,12 +7,9 @@ public class PlayerController : MonoBehaviour
     public float maxDistance = 20;
 
     public Transform holdTransform;     // Transform that designates where the items held in hands should be placed to
-    public GameObject UI;
-    private bool UISpawned;
     private GameObject heldItem;
     
     void Start() {
-        UISpawned = false;
     }
 
     private void OnTriggerEnter(Collider other) {
@@ -48,19 +45,5 @@ public class PlayerController : MonoBehaviour
             
             heldItem = null;
         }
-    }
-
-    public void OnSelect()
-    {
-        if (!UISpawned)
-        {
-            UISpawned = true;
-            SpawnUI();
-        }
-    }
-
-    public void SpawnUI()
-    {
-        Instantiate(UI);
     }
 }

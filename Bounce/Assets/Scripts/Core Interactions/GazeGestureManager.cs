@@ -3,6 +3,7 @@ using UnityEngine.XR.WSA.Input;
 
 public class GazeGestureManager : MonoBehaviour
 {
+    public GameManager gameManager;
     public static GazeGestureManager Instance { get; private set; }
 
     // Represents the hologram that is currently being gazed at.
@@ -13,19 +14,27 @@ public class GazeGestureManager : MonoBehaviour
     // Use this for initialization
     void Awake()
     {
+        if (gameManager == null) {
+            gameManager = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        }
+
         Instance = this;
 
         // Set up a GestureRecognizer to detect Select gestures.
         recognizer = new GestureRecognizer();
         recognizer.Tapped += (args) =>
         {
-            GameManager.PC.Place();
-
             // Send an OnSelect message to the focused object and its ancestors.
-            if (FocusedObject != null)
-            {
-                // Debug.Log("hit!");
+            if (FocusedObject != null && (FocusedObject.CompareTag("UI Element") || FocusedObject.CompareTag("Ball"))) {
+                Debug.Log("hit!");
                 FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
+            } else if(!GameManager.IsUISpawned) {
+                // Spawn UI
+                Debug.Log("No UI");
+                gameManager.SpawnUI();
+            } else {
+                Debug.Log("Place item");
+                GameManager.PC.Place();
             }
         };
         recognizer.StartCapturingGestures();

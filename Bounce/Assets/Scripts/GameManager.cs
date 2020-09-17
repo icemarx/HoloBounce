@@ -31,6 +31,10 @@ public class GameManager : MonoBehaviour {
         }
     }
     public int m_MatIndex = 0;
+    /// <summary>
+    /// True if the UI is currently active, false otherwise
+    /// </summary>
+    public static bool IsUISpawned { get; private set; }
 
     /// <summary>
     /// Property <c>PC</c> represents the <c>PlayerController</c> script component of the
@@ -51,6 +55,11 @@ public class GameManager : MonoBehaviour {
     /// <see cref="BALL_TYPES"/>
     /// </summary>
     public static GameObject CurrentBallType { get; private set; }
+    /// <summary>
+    /// Represents the user interface. It is a game object composed of childs with a
+    /// <c>UI Element</c> tag.
+    /// </summary>
+    public static GameObject UI { get; private set; }
 
     /// <summary>
     /// Finds the <c>Player</c> and all the balls with the Ball tag before the start of the game
@@ -60,6 +69,9 @@ public class GameManager : MonoBehaviour {
         PC = GameObject.Find("Player").GetComponent<PlayerController>();
         Balls = new List<GameObject>(GameObject.FindGameObjectsWithTag("Ball"));
         CurrentBallType = DEFAULT_BALL_TYPE;
+
+        UI = GameObject.Find("UI");
+        UI.SetActive(IsUISpawned = true);
     }
 
     /// <summary>
@@ -134,5 +146,28 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     public void IncrementBallColor() {
         MatIndex = (MatIndex + 1) % BALL_MATERIAL.Length;
+    }
+
+
+    /// <summary>
+    /// Makes the UI active and places it infront of the player
+    /// </summary>
+    public void SpawnUI() {
+        UI.SetActive(true);
+        UI.transform.position = PC.transform.position + PC.transform.forward;
+        UI.transform.LookAt(PC.transform);
+        UI.transform.Rotate(new Vector3(0, 180, 0));
+
+        IsUISpawned = true;
+        Debug.Log("UI SPAWNED");
+    }
+
+    /// <summary>
+    /// Makes the UI disappear, when being moved
+    /// </summary>
+    public void DespawnUI() {
+        UI.SetActive(false);
+        IsUISpawned = false;
+        Debug.Log("UI DESPAWNED");
     }
 }

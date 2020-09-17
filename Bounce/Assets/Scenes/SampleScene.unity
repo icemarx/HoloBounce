@@ -672,7 +672,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxDistance: 20
   holdTransform: {fileID: 1903425739}
-  UI: {fileID: 473828476}
 --- !u!1001 &1050249386
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -988,6 +987,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04868b0de99be874284c766a2c439e43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!1 &1776322475
 GameObject:
   m_ObjectHideFlags: 0
@@ -1003,7 +1003,7 @@ GameObject:
   - component: {fileID: 1776322477}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: UI Element
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1035,6 +1035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 866aaccb97f561e4ba748f62cd7e2205, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManager: {fileID: 0}
 --- !u!135 &1776322478
 SphereCollider:
   m_ObjectHideFlags: 0
