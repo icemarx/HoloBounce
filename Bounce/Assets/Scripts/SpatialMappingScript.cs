@@ -10,6 +10,8 @@ public class SpatialMappingScript : MonoBehaviour
     private SpatialMappingCollider smCollider;
     private SpatialMappingRenderer smRenderer;
 
+    public GameManager gameManager;
+
     // Start is called before the first frame update
     void Awake() {
         smCollider = gameObject.GetComponentInParent<SpatialMappingCollider>();
@@ -17,6 +19,17 @@ public class SpatialMappingScript : MonoBehaviour
 
         StartCoroutine("ScannEnvironment");
 
+        /*
+        if (gameManager == null)
+        {
+            gameManager = GameObject.Find("GameManagerObject").GetComponent<GameManager>();
+        }
+
+        if (GameManager.IsUISpawned)
+        {
+            gameManager.SpawnUI();
+        }
+        */
     }
 
     /// <summary>

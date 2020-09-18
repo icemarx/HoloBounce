@@ -59,7 +59,8 @@ public class GameManager : MonoBehaviour {
     /// Represents the user interface. It is a game object composed of childs with a
     /// <c>UI Element</c> tag.
     /// </summary>
-    public static GameObject UI { get; private set; }
+    [SerializeField]
+    public GameObject UI; //{ get; private set; }
 
     /// <summary>
     /// Finds the <c>Player</c> and all the balls with the Ball tag before the start of the game
@@ -70,8 +71,14 @@ public class GameManager : MonoBehaviour {
         Balls = new List<GameObject>(GameObject.FindGameObjectsWithTag("Ball"));
         CurrentBallType = DEFAULT_BALL_TYPE;
 
-        UI = GameObject.Find("UI");
-        UI.SetActive(IsUISpawned = true);
+        if (UI == null)
+        {
+            UI = GameObject.Find("UI");
+        }
+        // You can edit active state of the UI object from the editor.
+        IsUISpawned = UI.activeSelf;
+        Debug.Log(IsUISpawned);
+
     }
 
     /// <summary>
