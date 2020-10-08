@@ -15,6 +15,11 @@ public class MoveUI : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Hides the UI until it is spawned again by airtapping at empty space.
+    /// <see cref="GameManager.DespawnUI"/>
+    /// <seealso cref="GazeGestureManager.recognizer"/>
+    /// </summary>
     public void OnSelect() {
         gameManager.DespawnUI();
     }

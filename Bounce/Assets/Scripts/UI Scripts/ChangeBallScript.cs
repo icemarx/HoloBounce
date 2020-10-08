@@ -16,6 +16,12 @@ public class ChangeBallScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Triggers changing ball color.
+    /// Current implementation uses a fixed list of colors through which it cycles.
+    /// After pressing, a new ball must be created, via <c>NewBall</c> UI element.
+    /// <see cref="GameManager.IncrementBallColor"/>
+    /// </summary>
     public void OnSelect() {
         gameManager.IncrementBallColor();
 

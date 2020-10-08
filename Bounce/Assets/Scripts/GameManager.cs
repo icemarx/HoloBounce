@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     /// <summary>
-    /// Default ball used when no other options for CurrentBallType, such as at the start
+    /// Default ball used when no other options for <c>CurrentBallType</c>, such as at the start
     /// of the game or when there is an error changing it.
+    /// <see cref="CurrentBallType"/>
     /// </summary>
     [SerializeField]
     private GameObject DEFAULT_BALL_TYPE;

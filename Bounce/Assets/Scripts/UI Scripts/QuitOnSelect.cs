@@ -4,18 +4,10 @@ using UnityEngine;
 
 public class QuitOnSelect : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    /// <summary>
+    /// Quits the application.
+    /// NOTE: will not work in editor.
+    /// </summary>
     public void OnSelect()
     {
         Application.Quit();

@@ -15,6 +15,10 @@ public class NewBallOnSelect : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Creates a new ball, by destroying the old ball and then generating a new one, placing it to <c>PlayerController.heldItem</c>
+    /// <see cref="PlayerController.heldItem"/>
+    /// </summary>
     public void OnSelect() {
         // Destroy old ball
         GameObject ball = GameManager.GetFirstBall();
