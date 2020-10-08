@@ -42,17 +42,18 @@ public class GameManager : MonoBehaviour {
     /// active <c>(GameObject) Player</c> in the game. It is set at the start of the game
     /// and should not be changed. References to the <c>(GameObject) Player</c> should be
     /// made through this component.
+    /// <see cref="PlayerController"/>
     /// </summary>
     public static PlayerController PC { get; private set; }
     /// <summary>
-    /// Property <c>balls</c> represents the List of all balls currently in game.
-    /// It can only be written in within the GameManager with methods
+    /// Property <c>Balls</c> represents the List of all balls currently in game.
+    /// It can only be written in within the <c>GameManager</c> with methods
     /// that add or remove balls from list.
     /// </summary>
     public static List<GameObject> Balls { get; private set; }
     /// <summary>
     /// The currently chosen type of ball. Should always be non-null. Mainly used for creating
-    /// new balls. Should alway be selected from <c>BALL_TYPES</c>.
+    /// new balls. Should always be selected from <c>BALL_TYPES</c>.
     /// <see cref="BALL_TYPES"/>
     /// </summary>
     public static GameObject CurrentBallType { get; private set; }
@@ -65,21 +66,20 @@ public class GameManager : MonoBehaviour {
 
     /// <summary>
     /// Finds the <c>Player</c> and all the balls with the Ball tag before the start of the game
-    /// and inicialises <c>Player</c> and <c>Balls</c> properties.
+    /// and initialises <c>Player</c> and <c>Balls</c> properties.
     /// </summary>
     private void Awake() {
         PC = GameObject.Find("Player").GetComponent<PlayerController>();
         Balls = new List<GameObject>(GameObject.FindGameObjectsWithTag("Ball"));
         CurrentBallType = DEFAULT_BALL_TYPE;
 
-        if (UI == null)
-        {
+        if (UI == null) {
             UI = GameObject.Find("UI");
         }
+
         // You can edit active state of the UI object from the editor.
         IsUISpawned = UI.activeSelf;
         // Debug.Log(IsUISpawned);
-
     }
 
     /// <summary>
@@ -141,7 +141,7 @@ public class GameManager : MonoBehaviour {
     /// </summary>
     /// <returns>Element at index 0 in the <c>Balls</c> list or null if list is empty</returns>
     public static GameObject GetFirstBall() {
-        if (Balls.Count >= 0)
+        if (Balls.Count > 0)
             return Balls[0];
 
         else return null;
@@ -158,7 +158,7 @@ public class GameManager : MonoBehaviour {
 
 
     /// <summary>
-    /// Makes the UI active and places it infront of the player
+    /// Makes the UI active and places it in front of the player
     /// </summary>
     public void SpawnUI() {
         UI.SetActive(true);
