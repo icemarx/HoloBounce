@@ -7,13 +7,11 @@ public class PlayerController : MonoBehaviour
     public float maxDistance = 20;
 
     public Transform holdTransform;     // Transform that designates where the items held in hands should be placed to
-    private GameObject heldItem;
-    
-    void Start() {
-    }
+    private GameObject heldItem;        // pointer to the item held in player's possession
+
 
     private void OnTriggerEnter(Collider other) {
-        // handle collision
+        // handle collision with Balls, picking them up
         if (other.CompareTag("Ball")) {
             // Debug.Log("Ball hit");
             PickUp(other.transform);
@@ -37,6 +35,9 @@ public class PlayerController : MonoBehaviour
         heldItem = item.gameObject;
     }
 
+    /// <summary>
+    /// Places the <c>heldItem</c> one unit in front of the player and marks that the item is not held anymore.
+    /// </summary>
     public void Place() {
         if(heldItem != null) {
             // detach and change position
