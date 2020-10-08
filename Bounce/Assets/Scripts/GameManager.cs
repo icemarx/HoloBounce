@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
+    [Header("Ball Settings")]
     /// <summary>
     /// Default ball used when no other options for <c>CurrentBallType</c>, such as at the start
     /// of the game or when there is an error changing it.
@@ -32,6 +33,7 @@ public class GameManager : MonoBehaviour {
         }
     }
     public int m_MatIndex = 0;
+
     /// <summary>
     /// True if the UI is currently active, false otherwise
     /// </summary>
@@ -57,6 +59,8 @@ public class GameManager : MonoBehaviour {
     /// <see cref="BALL_TYPES"/>
     /// </summary>
     public static GameObject CurrentBallType { get; private set; }
+
+    [Header("User Interface")]
     /// <summary>
     /// Represents the user interface. It is a game object composed of childs with a
     /// <c>UI Element</c> tag.
