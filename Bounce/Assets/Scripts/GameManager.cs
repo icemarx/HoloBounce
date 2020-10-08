@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour {
         }
         // You can edit active state of the UI object from the editor.
         IsUISpawned = UI.activeSelf;
-        Debug.Log(IsUISpawned);
+        // Debug.Log(IsUISpawned);
 
     }
 

@@ -12,20 +12,17 @@ public class BallController : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    /// <summary>
+    /// When selected, applies force to the Ball, simulating throwing the ball into <c>throwDirection</c>,
+    /// based on the player and ball's position.
+    /// </summary>
+    public void OnSelect() {
+        // compute and apply force of the toss
+        Vector3 throwDirection = this.transform.position - Camera.main.transform.position;
+        throwDirection = throwDirection.normalized * forceAmount;
+        rb.AddForce(throwDirection, ForceMode.Impulse);
 
-    public void OnSelect()
-    {
-        Vector3 vec = this.transform.position - Camera.main.transform.position;
-        vec = vec.normalized * forceAmount;
-        rb.AddForce(vec, ForceMode.Impulse);
+        // apply gravity
         rb.useGravity = true;
     }
-
-    
-
 }
