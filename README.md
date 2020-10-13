@@ -4,13 +4,14 @@ This readme serves as footnotes from this project. It covers some basic informat
 
 
 ## Link to Microsoft HoloLens device configurations and other setup:
-The device used for the project is HoloLens 1 by Microsoft. Aditional information about it should be viewed at the source: https://docs.microsoft.com/en-us/hololens/hololens1-hardware
-Before starting development, make sure you have the correct tools installed: https://docs.microsoft.com/en-us/windows/mixed-reality/develop/install-the-tools?tabs=unity
+The device used for the project is HoloLens 1 by Microsoft. Aditional information about it should be viewed at the source: https://docs.microsoft.com/en-us/hololens/hololens1-hardware.
+Before starting development, make sure you have the correct tools installed: https://docs.microsoft.com/en-us/windows/mixed-reality/develop/install-the-tools?tabs=unity.
+
 We are using Unity 2018.4.10f1 for this project.
 
 ## Link to Microsoft HoloLens Origami tutorial:
 In the link bellow, there's a tutorial by Microsoft which is a good "HelloWorld" project for HoloLens development.
-https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/tutorials/holograms-101e
+https://docs.microsoft.com/en-us/windows/mixed-reality/develop/unity/tutorials/holograms-101e.
 
 It is a good way for any newcommers to the project to get familiar with some of the basic functionalities that the development kit has to offer as well as how to apply them.
 
@@ -25,9 +26,27 @@ How to test the project on the HoloLens through Unity editor:
   6. Ensure the Connection Status changes to green Connected.
   7. Now you can now click Play in the Unity editor.
 
-## TODO: How to build the project and deploy it to device
+## How to build the project and deploy it to device:
+To build the project:
+  1. In Unity editor: File > Build Settings
+  2. Switch platform to Universal Windows platform (TODO: insert image here)
+  3. Add Scenes
+  4. Target device should be HoloLens
+  5. Build configuration should be Release
+  6. Click Build
+  7. Make sure you're saving the build version in an empty folder
+  8. When it is build, open the .sln file with Visual Studio
+  9. Set Solution Configurations from Debug to Release and Solution Platforms from ARM to x86.
+  10. Select Remote Machine and input the device IP adress.
+  11. The application should now hopefully be on the device.
 
-## TODO: How to use the game on the device
+## How to use the game on the device:
+To run the game:
+  1. Use the bloom gesture to open the menu
+  2. Select all apps and find the game
+  3. Click on the icon, placing the application window into the space
+  4. The game will start within a minute
+To quit the game, just click the menu item QUIT.
 
 ## How to charge the device (based on our experience):
 To charge:
