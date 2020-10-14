@@ -26,14 +26,14 @@ public class GazeGestureManager : MonoBehaviour
         {
             // Send an OnSelect message to the focused object and its ancestors.
             if (FocusedObject != null && (FocusedObject.CompareTag("UI Element") || FocusedObject.CompareTag("Ball"))) {
-                Debug.Log("hit!");
+                // Debug.Log("hit!");
                 FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
             } else if(!GameManager.IsUISpawned) {
                 // Spawn UI
-                Debug.Log("No UI");
+                // Debug.Log("No UI");
                 gameManager.SpawnUI();
             } else {
-                Debug.Log("Place item");
+                // Debug.Log("Place item");
                 GameManager.PC.Place();
             }
         };

@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour {
         UI.transform.Rotate(new Vector3(0, 180, 0));
 
         IsUISpawned = true;
-        Debug.Log("UI SPAWNED");
+        // Debug.Log("UI SPAWNED");
     }
 
     /// <summary>
@@ -180,6 +180,6 @@ public class GameManager : MonoBehaviour {
     public void DespawnUI() {
         UI.SetActive(false);
         IsUISpawned = false;
-        Debug.Log("UI DESPAWNED");
+        // Debug.Log("UI DESPAWNED");
     }
 }
