@@ -29,7 +29,8 @@ How to test the project on the HoloLens through Unity editor:
 ## How to build the project and deploy it to device:
 To build the project:
   1. In Unity editor: File > Build Settings.
-  2. Switch platform to Universal Windows platform (TODO: insert image here).
+  2. Switch platform to Universal Windows platform.
+  ![alt text](./img/build_settings1.png "Build settings image.")
   3. Add Scenes.
   4. Target device should be HoloLens.
   5. Build configuration should be Release.
