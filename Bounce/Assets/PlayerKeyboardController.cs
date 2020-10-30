@@ -6,10 +6,14 @@ public class PlayerKeyboardController : MonoBehaviour
 {
     public float rotSpeed = 50;
     public float movSpeed = 2;
+
     private float xRotation = 0f;
     private float yRotation = 0f;
 
-    public CharacterController controller;
+    private bool holding = false;       // true if the mouse click is being held, before release
+
+    public CharacterController controller;          // Player character controller, responsible for being moved
+    public GazeGestureManager gazeGestureManager;   // Manager that detects gestures, such as the AirTap
 
 
     private void Start() {
@@ -20,6 +24,7 @@ public class PlayerKeyboardController : MonoBehaviour
     private void LateUpdate() {
         RotatePlayer();
         MovePlayer();
+        SimulateAirtap();
     }
 
     /// <summary>
@@ -58,4 +63,24 @@ public class PlayerKeyboardController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, yRotation, 0f);
     }
 
+    /// <summary>
+    /// Simulates the AirTap gesture, by detecting a Left Mouse Button click and
+    /// then passing it to <c>GazeGestureManager</c> to handle.
+    /// <see cref="GazeGestureManager.HandleAirTap"/>
+    /// </summary>
+    void SimulateAirtap() {
+        if (Input.GetMouseButtonDown(0)) {
+            // Debug.Log("Clicked");
+            holding = true;
+        }
+
+        if (Input.GetMouseButtonUp(0)) {
+            // Debug.Log("Unclicked");
+            holding = false;
+            gazeGestureManager.HandleAirTap();
+
+        } else if(holding) {
+            // Debug.Log("Holding");
+        }
+    }
 }

@@ -599,6 +599,7 @@ MonoBehaviour:
   rotSpeed: 50
   movSpeed: 2
   controller: {fileID: 534669909}
+  gazeGestureManager: {fileID: 1611705618}
 --- !u!143 &534669909
 CharacterController:
   m_ObjectHideFlags: 0
