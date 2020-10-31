@@ -15,6 +15,7 @@ public class PlayerKeyboardController : MonoBehaviour
     public CharacterController controller;          // Player character controller, responsible for being moved
     public GazeGestureManager gazeGestureManager;   // Manager that detects gestures, such as the AirTap
 
+    public NewBallOnSelect newBallOnSelect; // Reference to the new ball on select script
 
     private void Start() {
         Cursor.lockState = CursorLockMode.Locked;
@@ -25,6 +26,7 @@ public class PlayerKeyboardController : MonoBehaviour
         RotatePlayer();
         MovePlayer();
         SimulateAirtap();
+        NewBall();
     }
 
     /// <summary>
@@ -44,6 +46,22 @@ public class PlayerKeyboardController : MonoBehaviour
             move_dir *= 2;
 
         controller.Move(move_dir * movSpeed * Time.deltaTime);
+    }
+
+    /// <summary>
+    /// Keyboard shortcut for spawning a new ball.
+    /// </summary>
+    private void NewBall()
+    {
+        if (Input.GetKey(KeyCode.R))
+        {
+            newBallOnSelect = FindObjectOfType<NewBallOnSelect>();
+            if (newBallOnSelect != null)
+            {
+                newBallOnSelect.OnSelect();
+            }
+        }
+            
     }
 
     /// <summary>
