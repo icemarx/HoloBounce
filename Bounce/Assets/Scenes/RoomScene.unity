@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 170076734}
-  m_IndirectSpecularColor: {r: 0.43828326, g: 0.48632276, b: 0.5666013, a: 1}
+  m_IndirectSpecularColor: {r: 0.43828303, g: 0.48632216, b: 0.5666002, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -579,7 +579,7 @@ GameObject:
   - component: {fileID: 534669908}
   m_Layer: 0
   m_Name: Player
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,6 +692,7 @@ MonoBehaviour:
   movSpeed: 2
   controller: {fileID: 534669909}
   gazeGestureManager: {fileID: 1611705618}
+  newBallOnSelect: {fileID: 0}
 --- !u!143 &534669909
 CharacterController:
   m_ObjectHideFlags: 0

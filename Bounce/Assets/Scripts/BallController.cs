@@ -23,7 +23,7 @@ public class BallController : MonoBehaviour
     /// </summary>
     public void OnSelect() {
         // compute and apply force of the toss
-        Vector3 throwDirection = this.transform.position - Camera.main.transform.position;
+        Vector3 throwDirection = this.transform.position - GameManager.PC.transform.position;
         throwDirection = throwDirection.normalized * forceAmount;
         rb.AddForce(throwDirection, ForceMode.Impulse);
 
@@ -37,12 +37,12 @@ public class BallController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // if the ball does not collide with the player
-        if (!collision.other.CompareTag("MainCamera"))
+        if (!collision.other.CompareTag("Player"))
         {
             // change pitch slightly based on velocity
             bounceSound.pitch = 1f + Mathf.Min(0.2f, 2f*rb.velocity.magnitude/100f);
             bounceSound.volume = bounce_volume + Mathf.Min(0.2f, 2f * rb.velocity.magnitude / 100f);
-            Debug.Log(rb.velocity.magnitude);
+            // Debug.Log(rb.velocity.magnitude);
 
             // play the bounce sound effect
             bounceSound.Play();
