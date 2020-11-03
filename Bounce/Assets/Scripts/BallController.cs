@@ -37,7 +37,7 @@ public class BallController : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         // if the ball does not collide with the player
-        if (!collision.other.CompareTag("Player"))
+        if (!collision.other.CompareTag("MainCamera"))
         {
             // change pitch slightly based on velocity
             bounceSound.pitch = 1f + Mathf.Min(0.2f, 2f*rb.velocity.magnitude/100f);
