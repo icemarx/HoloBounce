@@ -25,6 +25,20 @@ How to test the project on the HoloLens through Unity editor:
   5. Click Connect.
   6. Ensure the Connection Status changes to green Connected.
   7. You can now click Play in the Unity editor.
+  
+## Testing the project remotely (only in Editor):
+The following is meant as an easier way of testing/simulating some of the features without the need of the HoloLens device.
+However, new features should be tested on the device at some point before building and pushing to the device.
+
+Use RoomScene, as the development scene. This scene should not be built onto the device.
+Make sure that the PlayerKeyboardCOntroller script on the Player GameObject is set to active. It should not be active in the main scene (SampleScene).
+
+The current commands for movement are the WASD keys. For camera rotation, use the mouse (note that there is a limit of turn).
+The Left Mouse Button is currently set to simulate the AirTap gesture, but will probably require tweaks in future builds, based on implementation needs.
+The 'R' Key is used to generate a new ball, such as when clicking the NewBall UI element (note that the UI must be placed in the room for this to work).
+
+Any additional features that will be tested with the PlayerKeyboardController should be documented here as well.
+
 
 ## How to build the project and deploy it to device:
 To build the project:
