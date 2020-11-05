@@ -13,11 +13,11 @@ public class SpatialMappingScript : MonoBehaviour
     public GameManager gameManager;
 
     // Start is called before the first frame update
-    void Awake() {
+    void Awake() {  
         smCollider = gameObject.GetComponentInParent<SpatialMappingCollider>();
         smRenderer = gameObject.GetComponentInParent<SpatialMappingRenderer>();
 
-        StartCoroutine("ScannEnvironment");
+        StartCoroutine("ScanEnvironment");
 
         /*
         if (gameManager == null)
@@ -33,6 +33,21 @@ public class SpatialMappingScript : MonoBehaviour
     }
 
     /// <summary>
+    /// Deletes the old scanned environment and starts the coroutine <c>ScanEnvironment</c> to
+    /// scan it again.
+    /// </summary>
+    public void Rescan() {
+        // remove old scan
+        // TODO: check if the Surface Parent object is correct
+        foreach (Transform child in smCollider.surfaceParent.transform) {
+            Destroy(child.gameObject);
+        }
+
+        // scan again
+        StartCoroutine("ScanEnvironment");
+    }
+
+    /// <summary>
     /// Starts scanning the environment for real world objects and generates colliders for them.
     /// While scanning, the detected colliders are visualised by the renderer as well.
     /// Scanning is active for a number of seconds, designated by the value of <c>SCANNING_TIME</c>.
@@ -40,7 +55,7 @@ public class SpatialMappingScript : MonoBehaviour
     /// freezes updates and stops visualisation to conserve processing power.
     /// </summary>
     /// <returns>Time needed to stop scanning in seconds</returns>
-    IEnumerator ScannEnvironment() {
+    IEnumerator ScanEnvironment() {
         // start scanning environment
         smCollider.freezeUpdates = false;
         smRenderer.freezeUpdates = false;
