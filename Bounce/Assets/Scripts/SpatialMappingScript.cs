@@ -9,6 +9,7 @@ public class SpatialMappingScript : MonoBehaviour
     private float SCANNING_TIME = 10f;
     private SpatialMappingCollider smCollider;
     private SpatialMappingRenderer smRenderer;
+    public SpatialMappingBase.LODType lod;
 
     public GameManager gameManager;
 
@@ -16,6 +17,7 @@ public class SpatialMappingScript : MonoBehaviour
     void Awake() {  
         smCollider = gameObject.GetComponentInParent<SpatialMappingCollider>();
         smRenderer = gameObject.GetComponentInParent<SpatialMappingRenderer>();
+        lod = smCollider.lodType;
 
         StartCoroutine("ScanEnvironment");
 
@@ -61,6 +63,7 @@ public class SpatialMappingScript : MonoBehaviour
         smRenderer.freezeUpdates = false;
         // Apply visualisation
         smRenderer.renderState = SpatialMappingRenderer.RenderState.Visualization;
+        smCollider.lodType = lod;
 
         Debug.Log("Started Scanning");
 
