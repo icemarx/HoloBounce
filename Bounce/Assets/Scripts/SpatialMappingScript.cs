@@ -13,6 +13,8 @@ public class SpatialMappingScript : MonoBehaviour
 
     public GameManager gameManager;
 
+    bool isScanning = false;
+
     // Start is called before the first frame update
     void Awake() {  
         smCollider = gameObject.GetComponentInParent<SpatialMappingCollider>();
@@ -39,14 +41,16 @@ public class SpatialMappingScript : MonoBehaviour
     /// scan it again.
     /// </summary>
     public void Rescan() {
-        // remove old scan
-        // TODO: check if the Surface Parent object is correct
-        foreach (Transform child in smCollider.surfaceParent.transform) {
-            Destroy(child.gameObject);
-        }
+        if (!isScanning) {
+            // remove old scan
+            // TODO: check if the Surface Parent object is correct
+            foreach (Transform child in smCollider.surfaceParent.transform) {
+                Destroy(child.gameObject);
+            }
 
-        // scan again
-        StartCoroutine("ScanEnvironment");
+            // scan again
+            StartCoroutine("ScanEnvironment");
+        }
     }
 
     /// <summary>
@@ -59,6 +63,7 @@ public class SpatialMappingScript : MonoBehaviour
     /// <returns>Time needed to stop scanning in seconds</returns>
     IEnumerator ScanEnvironment() {
         // start scanning environment
+        isScanning = true;
         smCollider.freezeUpdates = false;
         smRenderer.freezeUpdates = false;
         // Apply visualisation
@@ -77,6 +82,7 @@ public class SpatialMappingScript : MonoBehaviour
         smRenderer.freezeUpdates = true;
         // Remove Visualisation
         smRenderer.renderState = SpatialMappingRenderer.RenderState.Occlusion;
+        isScanning = false;
 
         Debug.Log("Stopped Scanning");
     }
