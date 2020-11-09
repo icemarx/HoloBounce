@@ -24,18 +24,7 @@ public class GazeGestureManager : MonoBehaviour
         recognizer = new GestureRecognizer();
         recognizer.Tapped += (args) =>
         {
-            // Send an OnSelect message to the focused object and its ancestors.
-            if (FocusedObject != null && (FocusedObject.CompareTag("UI Element") || FocusedObject.CompareTag("Ball"))) {
-                // Debug.Log("hit!");
-                FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
-            } else if(!GameManager.IsUISpawned) {
-                // Spawn UI
-                // Debug.Log("No UI");
-                gameManager.SpawnUI();
-            } else {
-                // Debug.Log("Place item");
-                GameManager.PC.Place();
-            }
+            HandleAirTap();
         };
         recognizer.StartCapturingGestures();
     }
@@ -48,8 +37,8 @@ public class GazeGestureManager : MonoBehaviour
 
         // Do a raycast into the world based on the user's
         // head position and orientation.
-        var headPosition = Camera.main.transform.position;
-        var gazeDirection = Camera.main.transform.forward;
+        var headPosition = GameManager.PC.transform.position;
+        var gazeDirection = GameManager.PC.transform.forward;
 
         RaycastHit hitInfo;
         if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
@@ -69,6 +58,25 @@ public class GazeGestureManager : MonoBehaviour
         {
             recognizer.CancelGestures();
             recognizer.StartCapturingGestures();
+        }
+    }
+
+    /// <summary>
+    /// Handles the AirTap gesture. This is done by first checking the GameObject observed (if any)
+    /// and responding accordingly.
+    /// </summary>
+    public void HandleAirTap() {
+        // Send an OnSelect message to the focused object and its ancestors.
+        if (FocusedObject != null && (FocusedObject.CompareTag("UI Element") || FocusedObject.CompareTag("Ball"))) {
+            // Debug.Log("hit!");
+            FocusedObject.SendMessageUpwards("OnSelect", SendMessageOptions.DontRequireReceiver);
+        } else if (!GameManager.IsUISpawned) {
+            // Spawn UI
+            // Debug.Log("No UI");
+            gameManager.SpawnUI();
+        } else {
+            // Debug.Log("Place item");
+            GameManager.PC.Place();
         }
     }
 }

@@ -40,6 +40,11 @@ public class GameManager : MonoBehaviour {
     public static bool IsUISpawned { get; private set; }
 
     /// <summary>
+    /// True if sound should be muted
+    /// </summary>
+    public static bool muteSound { get; set; }
+
+    /// <summary>
     /// Property <c>PC</c> represents the <c>PlayerController</c> script component of the
     /// active <c>(GameObject) Player</c> in the game. It is set at the start of the game
     /// and should not be changed. References to the <c>(GameObject) Player</c> should be
