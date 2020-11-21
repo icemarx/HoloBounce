@@ -37,8 +37,8 @@ public class GazeGestureManager : MonoBehaviour
 
         // Do a raycast into the world based on the user's
         // head position and orientation.
-        var headPosition = Camera.main.transform.position;
-        var gazeDirection = Camera.main.transform.forward;
+        var headPosition = GameManager.PC.transform.position;
+        var gazeDirection = GameManager.PC.transform.forward;
 
         RaycastHit hitInfo;
         if (Physics.Raycast(headPosition, gazeDirection, out hitInfo))
