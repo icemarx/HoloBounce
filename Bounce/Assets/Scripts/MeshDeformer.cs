@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 
 // This ensures there is a MeshFilter component present on the object
@@ -76,7 +74,5 @@ public class MeshDeformer : MonoBehaviour
         float attenuatedForce = force / (1f + pointToVertex.sqrMagnitude);
         float velocity = attenuatedForce * Time.deltaTime;
         vertexVelocities[i] += pointToVertex.normalized * velocity;
-
-        Debug.Log(vertexVelocities[i]);
     }
 }

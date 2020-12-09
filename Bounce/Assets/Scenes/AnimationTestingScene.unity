@@ -188,7 +188,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 142694564}
   m_LocalRotation: {x: 0.32750985, y: -0, z: -0, w: 0.9448478}
-  m_LocalPosition: {x: 0, y: -0.595, z: -0.819}
+  m_LocalPosition: {x: 0, y: -0.6431, z: -0.7679}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -286,6 +286,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &848208252 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4228116087509514040, guid: fc869f7baf666f34d925f94e501bbf16,
+    type: 3}
+  m_PrefabInstance: {fileID: 2116887759}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &848208261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848208252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 921abb86c2815a24d8d4fcf22aa6477b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 10
+  forceOffset: 0.1
+--- !u!114 &848208262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 848208252}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18bbe52cd35852f4aa6fe56ce76ff30e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  springForce: 20
+  damping: 5
 --- !u!1 &1176148517
 GameObject:
   m_ObjectHideFlags: 0
@@ -313,8 +347,8 @@ Light:
   m_Enabled: 1
   serializedVersion: 8
   m_Type: 1
-  m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 1
+  m_Color: {r: 0.8773585, g: 0.81184936, b: 0.63318795, a: 1}
+  m_Intensity: 1.5
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -323,9 +357,9 @@ Light:
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
-    m_Bias: 0.05
-    m_NormalBias: 0.4
-    m_NearPlane: 0.2
+    m_Bias: 0.16
+    m_NormalBias: 0.99
+    m_NearPlane: 0.1
   m_Cookie: {fileID: 0}
   m_DrawHalo: 0
   m_Flare: {fileID: 0}
@@ -375,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 4228116087509514036, guid: fc869f7baf666f34d925f94e501bbf16,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.788
+      value: -0.6726
       objectReference: {fileID: 0}
     - target: {fileID: 4228116087509514036, guid: fc869f7baf666f34d925f94e501bbf16,
         type: 3}
