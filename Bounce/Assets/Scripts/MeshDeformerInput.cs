@@ -1,18 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MeshDeformerInput : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    /// <summary>
+    /// Force with which the ball will be transofrmet.
+    /// <summary>
+    public float force = 10f;
+    public float forceOffset = .1f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    void Update() {
+
     }
 }
