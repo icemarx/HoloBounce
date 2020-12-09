@@ -24,6 +24,20 @@ public class MeshDeformer : MonoBehaviour
     // to it's previous shape.
     Vector3[] originalVertices, displacedVertices, vertexVelocities;
 
+    void Start()
+    {
+        deformingMesh = GetComponent<MeshFilter>().mesh;
+        originalVertices = deformingMesh.vertices;
+        displacedVertices = new Vector3[originalVertices.Length];
+        vertexVelocities = new Vector3[originalVertices.Length];
+
+
+        for (int i = 0; i < displacedVertices.Length; i++)
+        {
+            displacedVertices[i] = originalVertices[i];
+        }
+    }
+
 
     public void AddDeformingForce(Vector3[] points, float force) {
         Debug.Log("Hiipidy dippity I'm deforming the ball");
