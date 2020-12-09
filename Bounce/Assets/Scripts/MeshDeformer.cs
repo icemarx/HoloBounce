@@ -38,8 +38,19 @@ public class MeshDeformer : MonoBehaviour
         }
     }
 
+    void Update() {
+
+    }
+
 
     public void AddDeformingForce(Vector3[] points, float force) {
-        Debug.Log("Hiipidy dippity I'm deforming the ball");
+        for(int i = 0; i < points.Length; i++) {
+            Vector3 point = points[i];
+            point = transform.InverseTransformPoint(point);
+
+            for (int j = 0; j < displacedVertices.Length; j++) {
+                AddForceToVertex(j, point, force);
+            }
+        }
     }
 }
