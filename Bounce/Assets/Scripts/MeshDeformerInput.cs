@@ -8,7 +8,19 @@ public class MeshDeformerInput : MonoBehaviour
     public float force = 10f;
     public float forceOffset = .1f;
 
+    void Start() {
+        
+    }
+
     void Update() {
 
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Ball colided with something");
+
+        ContactPoint[] contacts = new ContactPoint[50];
+        Debug.Log(collision.GetContacts(contacts));
     }
 }
