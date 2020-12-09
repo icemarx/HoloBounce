@@ -39,7 +39,23 @@ public class MeshDeformer : MonoBehaviour
     }
 
     void Update() {
+        uniformScale = transform.localScale.x;
+        for (int i = 0; i < displacedVertices.Length; i++) {
+            UpdateVertex(i);
+        }
 
+        deformingMesh.vertices = displacedVertices;
+        deformingMesh.RecalculateNormals();
+    }
+
+    void UpdateVertex(int i) {
+        Vector3 velocity = vertexVelocities[i];
+        Vector3 displacement = displacedVertices[i] - originalVertices[i];
+        displacement *= uniformScale;
+        velocity -=  displacement * springForce * Time.deltaTime;
+        velocity *= 1f - damping * Time.deltaTime;
+        vertexVelocities[i] = velocity;
+        displacedVertices[i] += velocity * (Time.deltaTime / uniformScale);
     }
 
 
