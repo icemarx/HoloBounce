@@ -21,8 +21,21 @@ public class MeshDeformerInput : MonoBehaviour
     {
         // Array which stores the contacPoints.
         ContactPoint[] contacts = new ContactPoint[50];
-        collision.GetContacts(contacts);
+        int numOfContacts = collision.GetContacts(contacts);
 
-        deformer.AddDeformingForce(contacts, force); 
+        HandleCollision(contacts, numOfContacts);
+    }
+
+    void HandleCollision(ContactPoint[] contacts, int numOfContacts) {
+        Vector3[] points = new Vector3[numOfContacts];
+
+        // Might be better to send only one point and call the function
+        // for each point seperatly.
+        if (deformer) {
+            for (int i = 0; i < numOfContacts; i++) {
+                points[i] = contacts[i].point + (contacts[i].normal * forceOffset);
+            }
+            deformer.AddDeformingForce(points, force); 
+        }
     }
 }
