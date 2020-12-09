@@ -4,5 +4,7 @@ using UnityEngine;
 
 public class MeshDeformer : MonoBehaviour
 {
-    
+    public void AddDeformingForce(ContactPoint[] contacts, float force) {
+
+    }
 }
